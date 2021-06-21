@@ -13,7 +13,10 @@
   "dependencies": {
     "@nuxt/http": "latest",
     "express": "latest",
-    "nuxt": "latest"
+    "nuxt": "latest",
+    "sequelize": "6.6.2",
+    "sequelize-cli": "6.2.0",
+    "sqlite3": "5.0.2"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",
