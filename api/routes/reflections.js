@@ -2,21 +2,20 @@ const { Router } = require('express')
 
 const router = Router()
 
-const sqlite3 = require('sqlite3')
+const db = require('../../models/index')
 
-const db = new sqlite3.Database('db-dev.sqlite3')
 
+const users = [
+  { content: 'Alexandre' },
+  { content: 'Pooya' },
+  { content: 'Sébastien' }
+]
 
 /* GET users listing. */
 router.get('/reflections', function (req, res, next) {
-  db.serialize(() => {
-    db.all("select * from Reflections", (err, rows) => {
-      if (!err) {
-        res.send(rows)
-      }
-    })
+  db.Reflection.findAll().then(rfs => {
+    res.send(rfs)
   })
-  // res.json(users)
 })
 
 module.exports = router
