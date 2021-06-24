@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "@nuxt/http": "latest",
+    "elasticlunr": "0.9.5",
     "express": "latest",
+    "kuromoji": "0.1.2",
     "nuxt": "latest",
     "sequelize": "6.6.2",
     "sequelize-cli": "6.2.0",

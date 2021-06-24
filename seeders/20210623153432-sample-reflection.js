@@ -4,22 +4,32 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('Reflections', [
       {
-        content: "aiueo",
+        sentence: "aiueo",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        content: "kakikukeko",
+        sentence: "kakikukeko",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        content: "sasisuseso",
+        sentence: "sasisuseso",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        content: "tatituteto",
+        sentence: "tatituteto",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        sentence: "naninuneno",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        sentence: "hahihuheho",
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -27,6 +37,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('Reflections', null, {})
+    return queryInterface.bulkDelete('Reflections', null, {});
   }
 };

@@ -1,20 +1,28 @@
 <template>
-  <ul class="users">
-    <li v-for="(user, index) in users" :key="index" class="user">
-      {{ user.content }}
-    </li>
-  </ul>
+<div>
+  <li v-for="(rf, index) in rfs" :key="index">
+    {{rf.sentence}}
+  </li>
+  <li v-for="(result, index) in results" :key="index">
+    {{result.title}}
+  </li>
+  {{ none }}
+</div>
 </template>
 
 <script>
 export default {
   async asyncData ({ $http }) {
     const data = await $http.$get('/api/reflections')
-    return { users: data }
+    return {
+      rfs: data.reflections,
+      results: data.results,
+      none: data.none
+    }
   },
   head () {
     return {
-      title: 'Users'
+      title: 'Reflections'
     }
   }
 }
